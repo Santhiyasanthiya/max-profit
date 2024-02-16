@@ -1,4 +1,4 @@
-let unit = 7;
+let unit = 13;
 let maxtotal = 0;
 let maxsol = [];
 let buildtime = [4,5,10];
@@ -22,7 +22,6 @@ let maxProfit = (flag) => {
                 unitcopy-=buildtime[1];
                 profit+=(eachProfit[1]*unitcopy);
                 sol.T+=1;
-                console.log(sol)
             }else{
                 unitcopy-=buildtime[0];
                 profit+=(eachProfit[0]*unitcopy);
@@ -51,11 +50,9 @@ let maxProfit = (flag) => {
         maxtotal=profit;
         maxsol=[]
         maxsol.push(sol);
-    }else if(maxtotal==profit){
-        maxsol.push(sol)
     }
     sol = {
-    "p":0,
+    "P":0,
     "T":0,
     "C":0
 }
@@ -64,9 +61,8 @@ let maxProfit = (flag) => {
 maxProfit(3);
 maxProfit(2);
 maxProfit(1);
-
 console.log("Earnings: "+maxtotal);
 console.log("Solutions");
-for(let i=1;i<maxsol.length;i++){
+for(let i=0;i<maxsol.length;i++){
     console.log("P: "+maxsol[i].P+" T: "+maxsol[i].T+" C: "+maxsol[i].C);
 }
